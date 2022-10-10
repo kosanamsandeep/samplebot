@@ -29,7 +29,7 @@ def makeResponse(req):
 
     print("type of request is",type(req))
 
-    result = req.get("result")
+    result = req.get("queryResult")
 
     parameters = result.get("parameters")
 
