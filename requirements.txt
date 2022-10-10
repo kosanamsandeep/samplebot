@@ -1,2 +1,0 @@
-Flask==1.1.2
-Reqeusts==2.26.0
