@@ -23,6 +23,7 @@ def webhook():
     return r
 
 def makeResponse(req):
+    print("result is", req.get("result"))
     if req.get("result").get('action') == "bookcar":
     # parameters = result.get("parameters")
     # city = parameters.get("geo-city")
