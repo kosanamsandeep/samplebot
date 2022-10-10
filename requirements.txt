@@ -1,2 +1,2 @@
 Flask==1.1.2
-reqeusts==2.26.0
+Reqeusts==2.26.0
