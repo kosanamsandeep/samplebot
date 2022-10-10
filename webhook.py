@@ -45,13 +45,12 @@ def makeResponse(req):
     
     speech = f"city is {city} and date is {date} and cars type is {cars}"
 
-    return{"fulfillmentMessages":[
+    return {"fulfillmentMessages":[
         {
             "text":{
-                "text":speech
+                "text":[speech]
             }
-        }
-    ]}
+        }]}
     
     # return {
     # "speech": speech,
