@@ -11,7 +11,9 @@ app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
+
     req = request.get_json(silent=True, force=True)
+    
     print(json.dumps(req, indent=4))
     
     res = makeResponse(req)
@@ -24,7 +26,10 @@ def webhook():
 
 def makeResponse(req):
     print("result is", req.get("result"))
-    if req.get("result").get('action') == "bookcar":
+
+    result = req.get("result")
+    
+    if result.get('action') == "bookcar":
     # parameters = result.get("parameters")
     # city = parameters.get("geo-city")
     # date = parameters.get("date")
