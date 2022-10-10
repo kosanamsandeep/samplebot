@@ -43,13 +43,21 @@ def makeResponse(req):
 
     print(f"action is {action}")
     
-    speech = "something wronggg"
+    speech = f"city is {city} and date is {date} and cars type is {cars}"
+
+    return{"fulfillmentMessages":[
+        {
+            "text":{
+                "text":speech
+            }
+        }
+    ]}
     
-    return {
-    "speech": speech,
-    "displayText": speech,
-    "source": "apiai-weather-webhook"
-    }
+    # return {
+    # "speech": speech,
+    # "displayText": speech,
+    # "source": "apiai-weather-webhook"
+    # }
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
