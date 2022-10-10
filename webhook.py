@@ -27,11 +27,26 @@ def webhook():
 def makeResponse(req):
     print("result is", req.get("result"))
 
+    print("type of request is",type(req))
+
     result = req.get("result")
+
+    parameters = result.get("parameters")
+
+    city = parameters.get("geo-city")
+    date = parameters.get("date")
+    cars = parameters.get("cars")
+
+    print(f"city is {city} and date is {date} and cars type is {cars}")
+
+    action = result.get("action")
     
-    if result.get('action') == "bookcar":
-    # parameters = result.get("parameters")
-    # city = parameters.get("geo-city")
+    if action == "bookcar":
+        parameters = result.get("parameters")
+        city = parameters.get("geo-city")
+        date = parameters.get("date")
+        cars = parameters.get("cars")
+
     # date = parameters.get("date")
     # r=requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=06f070197b1f60e55231f8c46658d077')
     # json_object = r.json()
