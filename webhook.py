@@ -40,25 +40,11 @@ def makeResponse(req):
     print(f"city is {city} and date is {date} and cars type is {cars}")
 
     action = result.get("action")
+
+    print(f"action is {action}")
     
-    if action == "bookcar":
-        parameters = result.get("parameters")
-        city = parameters.get("geo-city")
-        date = parameters.get("date")
-        cars = parameters.get("cars")
-
-    # date = parameters.get("date")
-    # r=requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=06f070197b1f60e55231f8c46658d077')
-    # json_object = r.json()
-    # weather=json_object['list']
-    # for i in range(0,30):
-    #     if date in weather[i]['dt_txt']:
-    #         condition= weather[i]['weather'][0]['description']
-    #         break
-        speech = "This is a test request"
-    else:
-
-        speech = "something wronggg"
+    speech = "something wronggg"
+    
     return {
     "speech": speech,
     "displayText": speech,
